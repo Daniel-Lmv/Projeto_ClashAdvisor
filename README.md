@@ -3,6 +3,10 @@
 **Autor:** Daniel Limaverde da Silva  
 **Trabalho:** Avaliação da Unidade II
 
+## Vídeo de apresentação
+
+Disponível em: https://drive.google.com/file/d/1rQB7Hoq-o9rPBliEwsddDZIe8157qfiw/view?usp=sharing
+
 ## O projeto
 
 O ClashAdvisor ajuda jogadores de Clash of Clans a consultar sua vila, escolher prioridades de evolução, distribuir tarefas entre construtores e procurar estratégias. Foi feito com LangGraph, Streamlit, Ollama, documentos locais e ferramentas externas.
@@ -378,7 +382,3 @@ Não posso recomendar essa melhoria: **"Laboratório de Supertropas" não é uma
 Falha na consulta do jogador: Falha simulada de rede na API Supercell
 
 ---
-
-## Vídeo de apresentação
-
-Disponível em: 
