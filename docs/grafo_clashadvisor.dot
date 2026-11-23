@@ -1,0 +1,41 @@
+digraph ClashAdvisor {
+ graph [rankdir=TB,bgcolor="white",nodesep="0.36",ranksep="0.46",pad="0.20",fontname="Arial",fontsize=24,label="Grafo do ClashAdvisor",labelloc=t];
+ node [shape=box,style="rounded,filled",fillcolor="#E7F1FB",color="#416A95",fontname="Arial",fontsize=12,margin="0.14,0.10"];
+ edge [color="#475569",fontname="Arial",fontsize=10,arrowsize=.65];
+ start [label="Pergunta",shape=oval,fillcolor="#D6E9FB"];
+ in [label="guardrail_entrada"];
+ t [label="triagem"];
+ s [label="carregar_skills"];
+ p [label="perfil\nMCP próprio"];
+ b [label="construtores\nMCP próprio"];
+ c [label="comunidade\nMCP Exa"];
+ m [label="memoria"];
+ seek [label="buscar\nRAG"];
+ grade [label="avaliar"];
+ rewrite [label="reescrever"];
+ ans [label="responder"];
+ guard [label="guardrail\n(saída)"];
+ repair [label="corrigir"];
+ end [label="Resposta",shape=oval,fillcolor="#D6E9FB"];
+ {rank=same;p;b;c;m;seek;}
+ start -> in -> t -> s;
+ s -> p [label="perfil"];
+ s -> b [label="construtores"];
+ s -> c [label="internet"];
+ s -> m [label="memória"];
+ s -> seek [label="RAG"];
+ s -> ans [label="saudação / bloqueio"];
+ p -> seek [label="planejamento"];
+ p -> ans [label="consulta simples"];
+ b -> ans;
+ c -> ans;
+ m -> ans;
+ seek -> grade;
+ grade -> rewrite [label="insuficiente"];
+ rewrite -> seek;
+ grade -> ans [label="suficiente / limite"];
+ ans -> guard;
+ guard -> repair [label="plano inválido"];
+ repair -> guard;
+ guard -> end [label="aceito"];
+}
